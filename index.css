@@ -20,7 +20,7 @@ body {
     width: 100%;
     background: black;
     margin-bottom: 25px;
-    position: fixed;
+    position: top;
 }
 
 .navbar ul {
