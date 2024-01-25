@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br">     
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Discos</title>
+    <title>Conversor Polegada/milímetro</title>
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -20,9 +20,9 @@
 
     <nav class="navbar">
         <ul>
-            <li><a href="index.php">Discos</a></li>
-            <li><a href="retangulo.php">Chapas</a></li>
-            <li><a href="polmm.php">Pol/mm</a></li>
+            <li><a href="index.html">Discos</a></li>
+            <li><a href="retangulo.html">Chapas</a></li>
+            <li><a href="polmm.html">Pol/mm</a></li>
         </ul>
     </nav>
     <br>
@@ -34,7 +34,7 @@
         <br>
 
         <div class="container">
-            <form action="polmm.php" method="POST">
+     
 
                 <div class="form-group col-sm-6 flex-column d-flex">
                     <label>Polegadas:</label>
@@ -45,41 +45,16 @@
                     <input type="text" class="form-control" id="pol2" name="pol2" placeholder="Insira o denominador">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-outline-success" id="calcular" name="calcular" style="border-radius: 15px; margin-top: 25px;">Calcular</button>
+                    <button onClick="polmm()" class="btn btn-outline-success" id="calcular"
+                        style="border-radius: 15px; margin-top: 25px;">Calcular</button>
+                    <script src="polmm.js"></script>
                 </div>
-            </form>
+
+               
         </div>
-        <br>
-        <br>
-        <?php
-
-        /* Criado por Bruno Carvalho Martins */
-        /* GitHub: https://github.com/brunocmartins11 */
-
-        error_reporting(0);
-
-        $calcular = $_POST['calcular'];
-
-        if (isset($calcular)) {
-
-
-            $pol1 = $_POST['pol1'];
-            $pol2 = $_POST['pol2'];
-            
-            $div = $pol1 / $pol2;
-            $mm = $div * 25.4;
-
-
-            echo "<h4>Resultado em milímetros (mm):</h4>";
-            echo "<h5>" . $mm . " mm</h5>";
-        };
-
-
-        ?>
-
-        <br>
-
-    </center>
+        
+        <h4 style="margin-top: 30px">Resultado: </h4>
+        <h4 style="margin-top: 10px" id="mm">0 mm</h4>
     </center>
 </body>
 
